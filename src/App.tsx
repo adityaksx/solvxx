@@ -565,7 +565,7 @@ const Footer: React.FC = () => (
         <a href="/credits.html" className="hover:text-cyan-300 transition-colors">INCOIS Credits</a>
       </div>
     </div>
-    <div className="max-w-[90rem] mx-auto mt-5 pt-4 border-t border-white/10 text-center text-gray-400 font-mono text-[10px] uppercase tracking-widest">
+    <div className="max-w-[90rem] mx-auto mt-5 pt-5 border-t border-white/10 text-center text-gray-200 font-mono text-sm md:text-base font-bold uppercase tracking-[0.2em]">
       Truly made with love in India ❤️ 🇮🇳
     </div>
   </footer>
