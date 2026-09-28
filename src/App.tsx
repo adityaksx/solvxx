@@ -313,7 +313,7 @@ const AboutTeam: React.FC = () => {
     name: "Dr. Tusar Kanti Mishra",
     role: "Project Mentor",
     description: "Provide a brief description of how your mentor guided the architecture, vision, or scientific accuracy of the SolvX platform for the hackathon.",
-    photo: "",
+    photo: "mentor.png",
     github: "",
     email: "tusar.mishra@manipal.edu",
     linkedin: "https://www.linkedin.com/in/dr-tusar-kanti-mishra-0255841b0",
@@ -321,12 +321,12 @@ const AboutTeam: React.FC = () => {
   };
 
   const teamMembers: TeamPerson[] = [
-    { name: "Aditya Kumar Singh", role: "Backend", desc: "Engineered the complete backend architecture, managing NetCDF data pipelines, Xarray processing, and API endpoints for seamless multidimensional data flow", photo: "", github: "https://github.com/adityaksx", email: "Aditya26.mitblr2026@learner.manipal.edu", linkedin: "www.linkedin.com/in/adityaksx", instagram: "https://www.instagram.com/aditya.ksx" },
-    { name: "Anchal Prakash", role: "Research & UI Developer", desc: "Directed oceanographic research and data validation, while co-developing essential frontend components and integrating UI features", photo: "", github: "", email: "anchal.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/anchal-prakash-80233337a", instagram: "" },
+    { name: "Aditya Kumar Singh", role: "Backend", desc: "Engineered the complete backend architecture, managing NetCDF data pipelines, Xarray processing, and API endpoints for seamless multidimensional data flow", photo: "aditya.png", github: "https://github.com/adityaksx", email: "Aditya26.mitblr2026@learner.manipal.edu", linkedin: "www.linkedin.com/in/adityaksx", instagram: "https://www.instagram.com/aditya.ksx" },
+    { name: "Anchal Prakash", role: "Research & UI Developer", desc: "Directed oceanographic research and data validation, while co-developing essential frontend components and integrating UI features", photo: "anchal.jpeg", github: "", email: "anchal.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/anchal-prakash-80233337a", instagram: "" },
     { name: "Pratham Shahpura", role: " Team Lead & Presenter", desc: "Team Leader overseeing project strategy, pitching the core vision, and driving the overall presentation of the platform's scientific impact", photo: "", github: "", email: "Pratham.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" },
     { name: "Swarna Prajapati", role: "Lead Frontend Developer", desc: "Lead Frontend Developer who architected and built the entire React and Tailwind-based glassmorphic user interface and responsive design", photo: "", github: "", email: "swarna2.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" },
     { name: "Bhavya Agarwal", role: "3D Visualization Engineer", desc: "Specialized in WebGL and Three.js to engineer the platform's core interactive 3D volumetric rendering and spatial plotting capabilities", photo: "", github: "", email: "Bhavya3.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/bhavya-aggarwal-39047743b", instagram: "" },
-    { name: "Yasharth Sharma", role: "Presentation Compiler", desc: "Designed and structured the presentation pitch deck, ensuring the platform's complex scientific workflows were communicated clearly and effectively", photo: "", github: "", email: "yasharth.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" }
+    { name: "Yasharth Sharma", role: "Presentation Compiler", desc: "Designed and structured the presentation pitch deck, ensuring the platform's complex scientific workflows were communicated clearly and effectively", photo: "yash.jpeg", github: "", email: "yasharth.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" }
   ];
 
 
