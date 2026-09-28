@@ -8,7 +8,7 @@ import {
   ArrowDownRight, User
 } from 'lucide-react';
 
-const VIEWER_URL = "https://solvx-viewer-4ijk9tohm-aditya-kumars-projects-a61d8bf4.vercel.app";
+const VIEWER_URL = "https://solvx-viewer.vercel.app/";
 
 // --- Custom Social Icons ---
 const LinkedinIcon = ({ size = 20, className = "" }) => (
