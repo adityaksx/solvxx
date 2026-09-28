@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
-  Activity, Layers, Map, Navigation, 
-  Thermometer, Droplet, Target, Globe, 
+  Activity, Layers, Navigation, 
+  Thermometer, Target, Globe, 
   ArrowRight, Terminal, ChevronRight, Brain,
   Database, Server, Workflow, MapPin, Bot,
   ArrowDownRight, User
