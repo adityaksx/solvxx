@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Activity, Layers, Navigation, 
   Thermometer, Target, Globe, 
-  ArrowRight, Terminal, ChevronRight, Brain, Github, Mail,
+  ArrowRight, Terminal, ChevronRight, Brain,
   Database, Server, Workflow, MapPin, Bot,
   ArrowDownRight, User
 } from 'lucide-react';
@@ -21,6 +21,19 @@ const InstagramIcon = ({ size = 20, className = "" }) => (
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const GithubIcon = ({ size = 20, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-1.5 6-6a4.3 4.3 0 0 0-1-3.5 4.4 4.4 0 0 0-.1-3.5S17.9.5 15 2a10.8 10.8 0 0 0-6 0C6.1.5 5 2.5 5 2.5A4.4 4.4 0 0 0 5 6a4.3 4.3 0 0 0-1 3.5c0 4.5 3 6 6 6a4.8 4.8 0 0 0-1 3.5v3"></path>
+  </svg>
+);
+
+const MailIcon = ({ size = 20, className = "" }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+    <polyline points="3 7 12 13 21 7"></polyline>
   </svg>
 );
 
@@ -284,12 +297,12 @@ const AboutTeam: React.FC = () => {
     <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4">
       {hasValue(person.github) && (
         <a href={person.github} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <Github size={large ? 21 : 18} />
+          <GithubIcon size={large ? 21 : 18} />
         </a>
       )}
       {hasValue(person.email) && (
         <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-cyan-300 transition-colors" aria-label="Email">
-          <Mail size={large ? 21 : 18} />
+          <MailIcon size={large ? 21 : 18} />
         </a>
       )}
       {hasValue(person.linkedin) && (
