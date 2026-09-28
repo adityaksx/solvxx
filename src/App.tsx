@@ -198,27 +198,84 @@ const Hero: React.FC = () => (
   </section>
 );
 
-// --- 3. Target Audience ---
+// --- 3. The Problem & Users ---
 const TargetAudience: React.FC = () => {
   const users = [
-    { role: "Operational Oceanographers", icon: <Activity size={20} className="text-cyan-400" />, need: "Monitor ocean state, currents and fronts while keeping model outputs and in-situ observations in one workflow." },
-    { role: "Ocean Forecasters", icon: <Target size={20} className="text-cyan-400" />, need: "Validate predictive fields against Argo observations and inspect where model values diverge by location, time and depth." },
-    { role: "Marine Researchers", icon: <Layers size={20} className="text-cyan-400" />, need: "Explore multidimensional NetCDF data, profiles, errors and anomalies without manually stitching together separate tools." },
-    { role: "Decision Support Teams", icon: <Globe size={20} className="text-cyan-400" />, need: "Get rapid situational awareness from currents, observations, anomalies and data-coverage context." }
+    { role: "Operational Oceanographers", icon: <Activity size={18} className="text-cyan-400" />, need: "Monitor ocean state and interpret modelled conditions alongside real observations." },
+    { role: "Ocean Forecasters", icon: <Target size={18} className="text-cyan-400" />, need: "Validate predictive fields and inspect where model values diverge from observations." },
+    { role: "Marine Researchers", icon: <Layers size={18} className="text-cyan-400" />, need: "Work with multidimensional ocean datasets, profiles, anomalies and model errors." },
+    { role: "Decision Support Teams", icon: <Globe size={18} className="text-cyan-400" />, need: "Turn complex ocean information into faster, more inspectable situational analysis." }
+  ];
+
+  const problems = [
+    {
+      number: "01",
+      title: "Ocean data is fragmented",
+      text: "Model outputs, in-situ observations, bathymetry and analysis results are often handled in separate tools and workflows."
+    },
+    {
+      number: "02",
+      title: "The ocean is 3D — the workflow often isn't",
+      text: "Important changes with depth, location and time are difficult to inspect when analysis is reduced to isolated maps, plots or tables."
+    },
+    {
+      number: "03",
+      title: "Model vs reality is hard to inspect",
+      text: "Comparing predictions with observations requires matching location, time, depth and variables before meaningful error metrics can be calculated."
+    },
+    {
+      number: "04",
+      title: "Important signals can be easy to miss",
+      text: "Anomalous conditions and sparse observation coverage need to be surfaced explicitly instead of leaving users to discover them manually."
+    }
   ];
 
   return (
     <section id="audience" className="py-24 px-6 border-b border-white/10 bg-transparent">
       <div className="max-w-[90rem] mx-auto">
-        <SectionHeader tag="The Problem & The People" title="THAT'S THE PROBLEM — AND WHO NEEDS SOLVX?" description="Ocean model outputs and real observations are often explored, validated and interpreted across separate tools. SolvX brings the data, comparison, anomalies, observation coverage and explanations into one browser-based workflow for oceanographers, forecasters, researchers and decision-support teams." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {users.map((u, i) => (
-            <div key={i} className="p-6 border border-white/20 bg-white/[0.05] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:bg-white/[0.1] hover:border-white/30 transition-all group flex flex-col rounded-sm">
-              <div className="w-10 h-10 border border-white/20 bg-white/[0.1] backdrop-blur-md flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-inner rounded-sm">{u.icon}</div>
-              <h3 className="text-sm font-bold font-mono text-white mb-3 uppercase tracking-wide drop-shadow-md">{u.role}</h3>
-              <p className="text-sm text-gray-200 leading-relaxed drop-shadow-sm">{u.need}</p>
+        <SectionHeader
+          tag="The Problem & The People"
+          title="THAT'S THE PROBLEM — AND WHO NEEDS SOLVX?"
+          description="The core problem is not a lack of ocean data. It is the difficulty of turning large, multidimensional model and observation datasets into one connected, inspectable analysis workflow."
+        />
+
+        <div className="grid lg:grid-cols-[1.7fr_1fr] gap-8 items-start">
+          <div className="border border-cyan-500/30 bg-cyan-950/15 backdrop-blur-xl rounded-sm p-6 md:p-8 shadow-[0_15px_45px_rgba(0,0,0,0.18)]">
+            <div className="flex items-center gap-3 mb-7">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee]"></div>
+              <span className="text-xs font-mono text-cyan-300 uppercase tracking-widest">What makes the problem difficult?</span>
             </div>
-          ))}
+            <div className="space-y-5">
+              {problems.map((problem) => (
+                <div key={problem.number} className="grid grid-cols-[42px_1fr] gap-4 p-4 border border-white/10 bg-black/10 rounded-sm">
+                  <div className="text-xs font-mono text-cyan-400 pt-1">{problem.number}</div>
+                  <div>
+                    <h3 className="text-white text-base md:text-lg font-semibold mb-2">{problem.title}</h3>
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">{problem.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="lg:pt-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full shadow-[0_0_8px_#06b6d4]"></div>
+              <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Who needs it?</span>
+            </div>
+            <p className="text-sm text-gray-400 leading-relaxed mb-5">Users who need to move from raw ocean information to a clear, evidence-based interpretation.</p>
+            <div className="space-y-3">
+              {users.map((u, i) => (
+                <div key={i} className="p-4 border border-white/15 bg-white/[0.04] backdrop-blur-md rounded-sm hover:bg-white/[0.08] transition-all flex items-start gap-3">
+                  <div className="w-9 h-9 flex-shrink-0 border border-white/15 bg-white/[0.06] flex items-center justify-center rounded-sm">{u.icon}</div>
+                  <div>
+                    <h3 className="text-xs font-bold font-mono text-white mb-1 uppercase tracking-wide">{u.role}</h3>
+                    <p className="text-xs text-gray-400 leading-relaxed">{u.need}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
