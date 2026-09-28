@@ -2,7 +2,7 @@ import React from 'react';
 import { 
   Activity, Layers, Navigation, 
   Thermometer, Target, Globe, 
-  ArrowRight, Terminal, ChevronRight, Brain,
+  ArrowRight, Terminal, ChevronRight, Brain, Github, Mail,
   Database, Server, Workflow, MapPin, Bot,
   ArrowDownRight, User
 } from 'lucide-react';
@@ -259,50 +259,95 @@ const AboutTeam: React.FC = () => {
     name: "[ Mentor Name ]",
     role: "Project Mentor",
     description: "Provide a brief description of how your mentor guided the architecture, vision, or scientific accuracy of the SolvX platform for the hackathon.",
-    linkedin: "#",
-    instagram: "#"
+    photo: "",
+    github: "",
+    email: "",
+    linkedin: "",
+    instagram: ""
   };
 
   const teamMembers = [
-    { name: "Anchal Prakash", role: "Frontend & UI/UX", desc: "Responsible for React architecture, glassmorphism design system, and responsive UI implementations.", linkedin: "#", instagram: "#" },
-    { name: "[ Teammate 2 ]", role: "Data Pipeline", desc: "Describe their role handling NetCDF datasets, API integrations, and backend data parsing.", linkedin: "#", instagram: "#" },
-    { name: "[ Teammate 3 ]", role: "3D Visualization", desc: "Describe their role building the Three.js canvas, volumetric rendering, and spatial plotting.", linkedin: "#", instagram: "#" },
-    { name: "[ Teammate 4 ]", role: "Oceanographic Models", desc: "Describe their role ensuring scientific accuracy across physical and biogeochemical variables.", linkedin: "#", instagram: "#" },
-    { name: "[ Teammate 5 ]", role: "Cloud Architecture", desc: "Describe their role managing deployment and environment setup.", linkedin: "#", instagram: "#" },
-    { name: "[ Teammate 6 ]", role: "Research & Validation", desc: "Describe their role validating model comparisons against observation data.", linkedin: "#", instagram: "#" }
+    { name: "Anchal Prakash", role: "Frontend & UI/UX", desc: "Responsible for React architecture, glassmorphism design system, and responsive UI implementations.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
+    { name: "[ Teammate 2 ]", role: "Data Pipeline", desc: "Describe their role handling NetCDF datasets, API integrations, and backend data parsing.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
+    { name: "[ Teammate 3 ]", role: "3D Visualization", desc: "Describe their role building the Three.js canvas, volumetric rendering, and spatial plotting.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
+    { name: "[ Teammate 4 ]", role: "Oceanographic Models", desc: "Describe their role ensuring scientific accuracy across physical and biogeochemical variables.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
+    { name: "[ Teammate 5 ]", role: "Cloud Architecture", desc: "Describe their role managing deployment and environment setup.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
+    { name: "[ Teammate 6 ]", role: "Research & Validation", desc: "Describe their role validating model comparisons against observation data.", photo: "", github: "", email: "", linkedin: "", instagram: "" }
   ];
+
+  const hasValue = (value: string) => Boolean(value.trim());
+
+  const SocialLinks: React.FC<{
+    person: typeof mentor;
+    large?: boolean;
+  }> = ({ person, large = false }) => (
+    <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4">
+      {hasValue(person.github) && (
+        <a href={person.github} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <Github size={large ? 21 : 18} />
+        </a>
+      )}
+      {hasValue(person.email) && (
+        <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-cyan-300 transition-colors" aria-label="Email">
+          <Mail size={large ? 21 : 18} />
+        </a>
+      )}
+      {hasValue(person.linkedin) && (
+        <a href={person.linkedin} className="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <LinkedinIcon size={large ? 21 : 18} />
+        </a>
+      )}
+      {hasValue(person.instagram) && (
+        <a href={person.instagram} className="text-gray-400 hover:text-pink-400 transition-colors" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <InstagramIcon size={large ? 21 : 18} />
+        </a>
+      )}
+    </div>
+  );
 
   return (
     <section id="about" className="py-24 px-6 border-b border-white/10 bg-transparent">
       <div className="max-w-[70rem] mx-auto">
         <SectionHeader tag="The Team" title="TEAM SOLVX" description="Manipal Institute of Technology Bengaluru" />
+
         <div className="flex justify-center mb-16 mt-8">
-          <div className="p-8 border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-md rounded-sm text-center flex flex-col items-center shadow-[0_0_30px_rgba(6,182,212,0.15)] max-w-lg w-full relative group">
-            <div className="w-20 h-20 bg-cyan-900/50 border border-cyan-400/50 rounded-full flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:scale-105 transition-transform"><User size={32} className="text-cyan-300" /></div>
-            <h4 className="text-white text-xl font-bold mb-2 drop-shadow-sm">{mentor.name}</h4>
-            <p className="text-xs font-mono text-cyan-300 uppercase tracking-widest mb-4">{mentor.role}</p>
-            <p className="text-sm text-gray-300 leading-relaxed mb-6 px-4">{mentor.description}</p>
-            <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4 w-full justify-center">
-              <a href={mentor.linkedin} className="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noreferrer"><LinkedinIcon size={20} /></a>
-              <a href={mentor.instagram} className="text-gray-400 hover:text-pink-400 transition-colors" target="_blank" rel="noreferrer"><InstagramIcon size={20} /></a>
+          <div className="p-8 border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-md rounded-sm flex flex-col shadow-[0_0_30px_rgba(6,182,212,0.15)] max-w-xl w-full relative group">
+            <div className="flex items-center gap-6">
+              <div className="w-24 h-24 bg-cyan-900/50 border border-cyan-400/50 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:scale-105 transition-transform">
+                {hasValue(mentor.photo) ? (
+                  <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-cover" />
+                ) : (
+                  <User size={34} className="text-cyan-300" />
+                )}
+              </div>
+              <div>
+                <h4 className="text-white text-xl font-bold mb-2 drop-shadow-sm">{mentor.name}</h4>
+                <p className="text-xs font-mono text-cyan-300 uppercase tracking-widest">{mentor.role}</p>
+              </div>
             </div>
+            <p className="text-sm text-gray-300 leading-relaxed mt-6 px-1">{mentor.description}</p>
+            <SocialLinks person={mentor} large />
           </div>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {teamMembers.map((member, i) => (
             <div key={i} className="p-6 md:p-8 border border-white/20 bg-white/[0.05] backdrop-blur-md rounded-sm hover:bg-white/[0.1] hover:border-cyan-500/50 transition-all group flex flex-col shadow-md">
-              <div className="flex items-center gap-5 mb-4">
-                <div className="w-16 h-16 bg-cyan-950/40 border border-cyan-500/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-cyan-900/60 transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)]"><User size={24} className="text-cyan-400 opacity-80" /></div>
+              <div className="flex items-center gap-5 mb-5">
+                <div className="w-20 h-20 bg-cyan-950/40 border border-cyan-500/30 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden group-hover:scale-105 group-hover:bg-cyan-900/60 transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                  {hasValue(member.photo) ? (
+                    <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <User size={26} className="text-cyan-400 opacity-80" />
+                  )}
+                </div>
                 <div>
                   <h4 className="text-white text-lg font-bold mb-1 drop-shadow-sm">{member.name}</h4>
                   <p className="text-[10px] font-mono text-cyan-300/80 uppercase tracking-widest">{member.role}</p>
                 </div>
               </div>
               <p className="text-sm text-gray-300 leading-relaxed flex-1 mb-6">{member.desc}</p>
-              <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4">
-                <a href={member.linkedin} className="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noreferrer"><LinkedinIcon size={18} /></a>
-                <a href={member.instagram} className="text-gray-400 hover:text-pink-400 transition-colors" target="_blank" rel="noreferrer"><InstagramIcon size={18} /></a>
-              </div>
+              <SocialLinks person={member} />
             </div>
           ))}
         </div>
