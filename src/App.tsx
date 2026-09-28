@@ -38,7 +38,7 @@ const SectionHeader: React.FC<{ tag: string; title: string; description?: string
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; text: string; accent?: string }> = ({ icon, title, text, accent = "cyan" }) => (
   <div className="p-6 border border-white/20 bg-white/[0.05] backdrop-blur-xl rounded-sm shadow-lg hover:bg-white/[0.09] hover:border-cyan-500/40 transition-all">
-    <div className={\`w-10 h-10 border border-cyan-500/30 bg-cyan-950/40 flex items-center justify-center mb-5 text-cyan-300 rounded-sm\`}>{icon}</div>
+    <div className="w-10 h-10 border border-cyan-500/30 bg-cyan-950/40 flex items-center justify-center mb-5 text-cyan-300 rounded-sm">{icon}</div>
     <h3 className="text-white font-mono text-sm font-bold uppercase tracking-wide mb-3">{title}</h3>
     <p className="text-sm text-gray-300 leading-relaxed">{text}</p>
   </div>
