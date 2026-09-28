@@ -7,8 +7,9 @@ import {
   ArrowDownRight, User
 } from 'lucide-react';
 
-// --- Custom Social Icons ---
-const LinkedinIcon = ({ size = 20, className = "" }) => (
+const VIEWER_URL = "https://solvx-viewer-4ijk9tohm-aditya-kumars-projects-a61d8bf4.vercel.app";
+
+const GithubIconconst LinkedinIcon = ({ size = 20, className = "" }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
@@ -108,10 +109,10 @@ const Navbar: React.FC = () => (
           <span className="text-white font-mono font-bold tracking-widest text-lg drop-shadow-md">SOLV<span className="text-cyan-500">X</span></span>
         </div>
         <div className="hidden md:flex items-center gap-6 text-xs font-mono text-gray-300 drop-shadow-md">
-          <a href="#audience" className="hover:text-cyan-400 transition-colors">AUDIENCE</a>
+          <a href="#audience" className="hover:text-cyan-400 transition-colors">PROBLEM & USERS</a>
           <a href="#solution" className="hover:text-cyan-400 transition-colors">SOLUTION</a>
           <a href="#architecture" className="hover:text-cyan-400 transition-colors">ARCHITECTURE</a>
-          <a href="#about" className="hover:text-cyan-400 transition-colors">ABOUT</a>
+          <a href="/credits.html" className="hover:text-cyan-400 transition-colors">CREDITS</a>
         </div>
       </div>
       <div className="flex items-center gap-6">
@@ -119,9 +120,9 @@ const Navbar: React.FC = () => (
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_#4ade80]"></div>
           SYSTEM ONLINE
         </div>
-        <button className="px-4 py-1.5 bg-white text-black font-mono text-xs font-bold hover:bg-cyan-500 hover:text-white transition-colors flex items-center gap-2 shadow-lg">
+        <a href={VIEWER_URL} target="_blank" rel="noreferrer" className="px-4 py-1.5 bg-white text-black font-mono text-xs font-bold hover:bg-cyan-500 hover:text-white transition-colors flex items-center gap-2 shadow-lg">
           LAUNCH VIEWER <ArrowRight size={14} />
-        </button>
+        </a>
       </div>
     </div>
   </nav>
@@ -144,9 +145,9 @@ const Hero: React.FC = () => (
           A browser-based platform that brings ocean model predictions and real-world observations together across location, depth and time.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="px-6 py-3.5 bg-cyan-600/90 backdrop-blur-sm text-white font-mono text-sm hover:bg-cyan-500 transition-colors flex items-center justify-center gap-2 font-bold shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.8)] border border-cyan-400/50 rounded-sm">
+          <a href={VIEWER_URL} target="_blank" rel="noreferrer" className="px-6 py-3.5 bg-cyan-600/90 backdrop-blur-sm text-white font-mono text-sm hover:bg-cyan-500 transition-colors flex items-center justify-center gap-2 font-bold shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:shadow-[0_0_30px_rgba(6,182,212,0.8)] border border-cyan-400/50 rounded-sm">
             LAUNCH EXPLORER <ChevronRight size={16} />
-          </button>
+          </a>
         </div>
       </div>
       <div className="relative aspect-square md:aspect-video lg:aspect-square max-h-[550px] w-full border border-white/20 bg-white/[0.03] backdrop-blur-xl overflow-hidden flex flex-col group rounded-sm shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
@@ -208,7 +209,7 @@ const TargetAudience: React.FC = () => {
   return (
     <section id="audience" className="py-24 px-6 border-b border-white/10 bg-transparent">
       <div className="max-w-[90rem] mx-auto">
-        <SectionHeader tag="End Users" title="WHO HAS THIS PROBLEM?" description="SolvX is designed around users who need to move from raw multidimensional ocean data to a clear, inspectable interpretation." />
+        <SectionHeader tag="The Problem & The People" title="THAT'S THE PROBLEM — AND WHO NEEDS SOLVX?" description="Ocean model outputs and real observations are often explored, validated and interpreted across separate tools. SolvX brings the data, comparison, anomalies, observation coverage and explanations into one browser-based workflow for oceanographers, forecasters, researchers and decision-support teams." />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {users.map((u, i) => (
             <div key={i} className="p-6 border border-white/20 bg-white/[0.05] backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:bg-white/[0.1] hover:border-white/30 transition-all group flex flex-col rounded-sm">
@@ -500,6 +501,7 @@ const Footer: React.FC = () => (
       <a href="#solution" className="hover:text-cyan-300 transition-colors">Solution</a>
       <a href="#architecture" className="hover:text-cyan-300 transition-colors">Architecture</a>
       <a href="#about" className="hover:text-cyan-300 transition-colors">Team</a>
+      <a href="/credits.html" className="hover:text-cyan-300 transition-colors">INCOIS Credits</a>
     </div>
   </footer>
 );
