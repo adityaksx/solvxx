@@ -371,7 +371,7 @@ const AboutTeam: React.FC = () => {
   const mentor: TeamPerson = {
     name: "Dr. Tusar Kanti Mishra",
     role: "Project Mentor",
-    description: "Provide a brief description of how your mentor guided the architecture, vision, or scientific accuracy of the SolvX platform for the hackathon.",
+    description: "Guided SolvX’s architecture, scientific approach, and project direction, helping the team translate complex ocean data into a practical and interpretable platform",
     photo: "mentor.png",
     github: "",
     email: "tusar.mishra@manipal.edu",
