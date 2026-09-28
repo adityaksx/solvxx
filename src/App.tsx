@@ -114,6 +114,7 @@ const Navbar: React.FC = () => (
           <a href="#audience" className="hover:text-cyan-400 transition-colors">PROBLEM & USERS</a>
           <a href="#solution" className="hover:text-cyan-400 transition-colors">SOLUTION</a>
           <a href="#architecture" className="hover:text-cyan-400 transition-colors">ARCHITECTURE</a>
+          <a href="#about" className="hover:text-cyan-400 transition-colors">ABOUT</a>
           <a href="/credits.html" className="hover:text-cyan-400 transition-colors">CREDITS</a>
         </div>
       </div>
@@ -561,6 +562,9 @@ const Footer: React.FC = () => (
       <a href="#architecture" className="hover:text-cyan-300 transition-colors">Architecture</a>
       <a href="#about" className="hover:text-cyan-300 transition-colors">Team</a>
       <a href="/credits.html" className="hover:text-cyan-300 transition-colors">INCOIS Credits</a>
+    </div>
+    <div className="w-full text-center md:col-span-2 text-gray-400 font-mono text-[10px] uppercase tracking-widest pt-4 border-t border-white/10">
+      Truly made with love in India ❤️ 🇮🇳
     </div>
   </footer>
 );
