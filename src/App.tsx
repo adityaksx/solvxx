@@ -326,7 +326,7 @@ const AboutTeam: React.FC = () => {
     { name: "Pratham Shahpura", role: " Team Lead & Presenter", desc: "Team Leader overseeing project strategy, pitching the core vision, and driving the overall presentation of the platform's scientific impact", photo: "pratham.jpeg", github: "", email: "Pratham.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" },
     { name: "Swarna Prajapati", role: "Lead Frontend Developer", desc: "Lead Frontend Developer who architected and built the entire React and Tailwind-based glassmorphic user interface and responsive design", photo: "", github: "", email: "swarna2.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/swarna-prajapati-b240a9394", instagram: "" },
     { name: "Bhavya Agarwal", role: "3D Visualization Engineer", desc: "Specialized in WebGL and Three.js to engineer the platform's core interactive 3D volumetric rendering and spatial plotting capabilities", photo: "", github: "", email: "Bhavya3.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/bhavya-aggarwal-39047743b", instagram: "" },
-    { name: "Yasharth Sharma", role: "Presentation Compiler", desc: "Designed and structured the presentation pitch deck, ensuring the platform's complex scientific workflows were communicated clearly and effectively", photo: "yash.jpeg", github: "", email: "yasharth.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" }
+    { name: "Yasharth Sharma", role: "Presentation Compiler", desc: "Handled the compilation and basic formatting of the presentation slides for the pitch deck", photo: "yash.jpeg", github: "", email: "yasharth.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" }
   ];
 
 
