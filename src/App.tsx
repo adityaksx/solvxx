@@ -553,17 +553,19 @@ const SystemArchitecture: React.FC = () => (
 
 // --- 8. Footer ---
 const Footer: React.FC = () => (
-  <footer className="py-8 px-6 bg-transparent flex flex-col md:flex-row justify-between items-center gap-4 mt-8">
-    <div className="text-gray-300 font-mono text-[10px] uppercase tracking-widest drop-shadow-md">
-      © {new Date().getFullYear()} SolvX System — Hackathon Build
+  <footer className="py-8 px-6 bg-transparent mt-8">
+    <div className="max-w-[90rem] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="text-gray-300 font-mono text-[10px] uppercase tracking-widest drop-shadow-md text-center md:text-left">
+        © {new Date().getFullYear()} SolvX System — Hackathon Build
+      </div>
+      <div className="flex flex-wrap justify-center gap-6 text-gray-200 text-[10px] font-mono uppercase tracking-widest drop-shadow-md">
+        <a href="#solution" className="hover:text-cyan-300 transition-colors">Solution</a>
+        <a href="#architecture" className="hover:text-cyan-300 transition-colors">Architecture</a>
+        <a href="#about" className="hover:text-cyan-300 transition-colors">Team</a>
+        <a href="/credits.html" className="hover:text-cyan-300 transition-colors">INCOIS Credits</a>
+      </div>
     </div>
-    <div className="flex gap-6 text-gray-200 text-[10px] font-mono uppercase tracking-widest drop-shadow-md">
-      <a href="#solution" className="hover:text-cyan-300 transition-colors">Solution</a>
-      <a href="#architecture" className="hover:text-cyan-300 transition-colors">Architecture</a>
-      <a href="#about" className="hover:text-cyan-300 transition-colors">Team</a>
-      <a href="/credits.html" className="hover:text-cyan-300 transition-colors">INCOIS Credits</a>
-    </div>
-    <div className="w-full text-center md:col-span-2 text-gray-400 font-mono text-[10px] uppercase tracking-widest pt-4 border-t border-white/10">
+    <div className="max-w-[90rem] mx-auto mt-5 pt-4 border-t border-white/10 text-center text-gray-400 font-mono text-[10px] uppercase tracking-widest">
       Truly made with love in India ❤️ 🇮🇳
     </div>
   </footer>
