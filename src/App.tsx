@@ -37,6 +37,45 @@ const MailIcon = ({ size = 20, className = "" }) => (
   </svg>
 );
 
+interface TeamPerson {
+  name: string;
+  role: string;
+  description?: string;
+  desc?: string;
+  photo?: string;
+  github?: string;
+  email?: string;
+  linkedin?: string;
+  instagram?: string;
+}
+
+const hasValue = (value?: string) => Boolean(value?.trim());
+
+const SocialLinks: React.FC<{ person: TeamPerson; large?: boolean }> = ({ person, large = false }) => (
+  <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4">
+    {hasValue(person.github) && (
+      <a href={person.github} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="GitHub">
+        <GithubIcon size={large ? 21 : 18} />
+      </a>
+    )}
+    {hasValue(person.email) && (
+      <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-cyan-300 transition-colors" aria-label="Email">
+        <MailIcon size={large ? 21 : 18} />
+      </a>
+    )}
+    {hasValue(person.linkedin) && (
+      <a href={person.linkedin} className="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+        <LinkedinIcon size={large ? 21 : 18} />
+      </a>
+    )}
+    {hasValue(person.instagram) && (
+      <a href={person.instagram} className="text-gray-400 hover:text-pink-400 transition-colors" target="_blank" rel="noreferrer" aria-label="Instagram">
+        <InstagramIcon size={large ? 21 : 18} />
+      </a>
+    )}
+  </div>
+);
+
 // --- Shared UI ---
 const SectionHeader: React.FC<{ tag: string; title: string; description?: string }> = ({ tag, title, description }) => (
   <div className="mb-12 md:mb-16 max-w-4xl">
@@ -268,7 +307,7 @@ const TechImpact: React.FC = () => (
 
 // --- 6. Team ---
 const AboutTeam: React.FC = () => {
-  const mentor = {
+  const mentor: TeamPerson = {
     name: "[ Mentor Name ]",
     role: "Project Mentor",
     description: "Provide a brief description of how your mentor guided the architecture, vision, or scientific accuracy of the SolvX platform for the hackathon.",
@@ -279,7 +318,7 @@ const AboutTeam: React.FC = () => {
     instagram: ""
   };
 
-  const teamMembers = [
+  const teamMembers: TeamPerson[] = [
     { name: "Anchal Prakash", role: "Frontend & UI/UX", desc: "Responsible for React architecture, glassmorphism design system, and responsive UI implementations.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
     { name: "[ Teammate 2 ]", role: "Data Pipeline", desc: "Describe their role handling NetCDF datasets, API integrations, and backend data parsing.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
     { name: "[ Teammate 3 ]", role: "3D Visualization", desc: "Describe their role building the Three.js canvas, volumetric rendering, and spatial plotting.", photo: "", github: "", email: "", linkedin: "", instagram: "" },
@@ -288,35 +327,6 @@ const AboutTeam: React.FC = () => {
     { name: "[ Teammate 6 ]", role: "Research & Validation", desc: "Describe their role validating model comparisons against observation data.", photo: "", github: "", email: "", linkedin: "", instagram: "" }
   ];
 
-  const hasValue = (value: string) => Boolean(value.trim());
-
-  const SocialLinks: React.FC<{
-    person: typeof mentor;
-    large?: boolean;
-  }> = ({ person, large = false }) => (
-    <div className="flex items-center gap-4 mt-auto border-t border-white/10 pt-4">
-      {hasValue(person.github) && (
-        <a href={person.github} className="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noreferrer" aria-label="GitHub">
-          <GithubIcon size={large ? 21 : 18} />
-        </a>
-      )}
-      {hasValue(person.email) && (
-        <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-cyan-300 transition-colors" aria-label="Email">
-          <MailIcon size={large ? 21 : 18} />
-        </a>
-      )}
-      {hasValue(person.linkedin) && (
-        <a href={person.linkedin} className="text-gray-400 hover:text-cyan-400 transition-colors" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-          <LinkedinIcon size={large ? 21 : 18} />
-        </a>
-      )}
-      {hasValue(person.instagram) && (
-        <a href={person.instagram} className="text-gray-400 hover:text-pink-400 transition-colors" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <InstagramIcon size={large ? 21 : 18} />
-        </a>
-      )}
-    </div>
-  );
 
   return (
     <section id="about" className="py-24 px-6 border-b border-white/10 bg-transparent">
