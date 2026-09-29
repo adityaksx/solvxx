@@ -10,7 +10,8 @@ import {
 
 const VIEWER_URL = "https://solvx-viewer.vercel.app/";
 const GITHUB_URL = "https://github.com/adityaksx/solvx-viewer";
-const PROTOTYPE_VIDEO_URL = "";
+// Replace this sample URL with the real SolvX prototype video.
+const PROTOTYPE_VIDEO_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 
 // --- Custom Social Icons ---
 const LinkedinIcon = ({ size = 20, className = "" }) => (
