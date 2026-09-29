@@ -86,7 +86,7 @@ const SectionHeader: React.FC<{ tag: string; title: string; description?: string
       <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full shadow-[0_0_8px_#06b6d4]"></div>
       <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">{tag}</span>
     </div>
-    <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-4 drop-shadow-md">{title}</h2>
+    <h2 className="text-2xl md:text-[2.6rem] font-semibold text-white tracking-tight mb-4 drop-shadow-md leading-tight">{title}</h2>
     {description && <p className="text-gray-300 text-lg leading-relaxed drop-shadow-sm">{description}</p>}
   </div>
 );
@@ -242,19 +242,19 @@ const TargetAudience: React.FC = () => {
         />
 
         <div className="grid lg:grid-cols-[1.7fr_1fr] gap-8 items-start">
-          <div className="border border-cyan-500/30 bg-cyan-950/15 backdrop-blur-xl rounded-sm p-6 md:p-8 shadow-[0_15px_45px_rgba(0,0,0,0.18)]">
+          <div className="border border-cyan-500/30 bg-cyan-950/15 backdrop-blur-xl rounded-sm p-5 md:p-6 shadow-[0_15px_45px_rgba(0,0,0,0.18)]">
             <div className="flex items-center gap-3 mb-7">
               <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee]"></div>
               <span className="text-xs font-mono text-cyan-300 uppercase tracking-widest">What makes the problem difficult?</span>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-4">
               {problems.map((problem) => (
-                <div key={problem.number} className="grid grid-cols-[42px_1fr] gap-4 p-4 border border-white/10 bg-black/10 rounded-sm">
-                  <div className="text-xs font-mono text-cyan-400 pt-1">{problem.number}</div>
-                  <div>
-                    <h3 className="text-white text-base md:text-lg font-semibold mb-2">{problem.title}</h3>
-                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">{problem.text}</p>
+                <div key={problem.number} className="p-4 md:p-5 border border-white/10 bg-black/10 rounded-sm">
+                  <div className="flex items-baseline gap-4 md:gap-5 mb-2">
+                    <div className="shrink-0 text-sm md:text-base font-mono font-bold text-cyan-400 tracking-wider">{problem.number}</div>
+                    <h3 className="text-white text-[1.05rem] md:text-[1.2rem] font-semibold leading-snug">{problem.title}</h3>
                   </div>
+                  <p className="pl-9 md:pl-11 text-[0.9rem] md:text-[0.95rem] text-gray-300 leading-relaxed">{problem.text}</p>
                 </div>
               ))}
             </div>
@@ -265,14 +265,14 @@ const TargetAudience: React.FC = () => {
               <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full shadow-[0_0_8px_#06b6d4]"></div>
               <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Who needs it?</span>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed mb-5">Users who need to move from raw ocean information to a clear, evidence-based interpretation.</p>
+            <p className="text-[0.9rem] text-gray-400 leading-relaxed mb-4">Users who need to move from raw ocean information to a clear, evidence-based interpretation.</p>
             <div className="space-y-3">
               {users.map((u, i) => (
-                <div key={i} className="p-4 border border-white/15 bg-white/[0.04] backdrop-blur-md rounded-sm hover:bg-white/[0.08] transition-all flex items-start gap-3">
-                  <div className="w-9 h-9 flex-shrink-0 border border-white/15 bg-white/[0.06] flex items-center justify-center rounded-sm">{u.icon}</div>
+                <div key={i} className="p-3.5 border border-white/15 bg-white/[0.04] backdrop-blur-md rounded-sm hover:bg-white/[0.08] transition-all flex items-start gap-3">
+                  <div className="w-8 h-8 flex-shrink-0 border border-white/15 bg-white/[0.06] flex items-center justify-center rounded-sm">{u.icon}</div>
                   <div>
-                    <h3 className="text-xs font-bold font-mono text-white mb-1 uppercase tracking-wide">{u.role}</h3>
-                    <p className="text-xs text-gray-400 leading-relaxed">{u.need}</p>
+                    <h3 className="text-[0.68rem] font-bold font-mono text-white mb-1 uppercase tracking-wide">{u.role}</h3>
+                    <p className="text-[0.75rem] text-gray-400 leading-relaxed">{u.need}</p>
                   </div>
                 </div>
               ))}
