@@ -319,16 +319,16 @@ const Solution: React.FC = () => {
 
         <div className="mt-10 border border-cyan-500/20 bg-cyan-950/15 backdrop-blur-xl rounded-sm p-6 md:p-8">
           <div className="flex items-center gap-3 mb-6">
-            <Terminal size={17} className="text-cyan-300"/>
-            <span className="text-xs font-mono text-cyan-300 uppercase tracking-widest">Core Innovation Loop</span>
+            <Terminal size={18} className="text-cyan-300"/>
+            <span className="text-sm font-mono text-cyan-300 uppercase tracking-widest">Core Innovation Loop</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-3">
             {workflow.map(([step, desc], i) => (
               <React.Fragment key={step}>
                 <div className="border border-white/15 bg-white/[0.04] p-4 rounded-sm">
-                  <div className="text-[10px] font-mono text-cyan-400 tracking-widest mb-2">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="text-white font-mono text-xs font-bold">{step}</div>
-                  <div className="text-gray-400 text-[11px] mt-2 leading-relaxed">{desc}</div>
+                  <div className="text-xs font-mono text-cyan-400 tracking-widest mb-2">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="text-white font-mono text-sm font-bold">{step}</div>
+                  <div className="text-gray-400 text-[0.82rem] mt-2 leading-relaxed">{desc}</div>
                 </div>
                 {i < workflow.length - 1 && <div className="hidden lg:flex items-center justify-center text-cyan-500/50"><ChevronRight size={16}/></div>}
               </React.Fragment>
@@ -608,8 +608,8 @@ const App: React.FC = () => (
       <TargetAudience />
       <Solution />
       <TechImpact />
-      <AboutTeam />
       <SystemArchitecture />
+      <AboutTeam />
       <Footer />
     </div>
   </div>
