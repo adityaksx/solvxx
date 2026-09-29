@@ -265,14 +265,14 @@ const TargetAudience: React.FC = () => {
               <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full shadow-[0_0_8px_#06b6d4]"></div>
               <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Who needs it?</span>
             </div>
-            <p className="text-[0.9rem] text-gray-400 leading-relaxed mb-4">Users who need to move from raw ocean information to a clear, evidence-based interpretation.</p>
-            <div className="space-y-3">
+            <p className="text-base md:text-[1.05rem] text-gray-300 leading-relaxed mb-5">Users who need to move from raw ocean information to a clear, evidence-based interpretation.</p>
+            <div className="space-y-4">
               {users.map((u, i) => (
-                <div key={i} className="p-3.5 border border-white/15 bg-white/[0.04] backdrop-blur-md rounded-sm hover:bg-white/[0.08] transition-all flex items-start gap-3">
-                  <div className="w-8 h-8 flex-shrink-0 border border-white/15 bg-white/[0.06] flex items-center justify-center rounded-sm">{u.icon}</div>
+                <div key={i} className="min-h-[112px] p-5 md:p-5.5 border border-white/15 bg-white/[0.05] backdrop-blur-md rounded-sm hover:bg-white/[0.09] hover:border-cyan-400/30 transition-all flex items-start gap-4 shadow-[0_8px_24px_rgba(0,0,0,0.14)]">
+                  <div className="w-10 h-10 flex-shrink-0 border border-cyan-500/25 bg-cyan-950/25 flex items-center justify-center rounded-sm">{u.icon}</div>
                   <div>
-                    <h3 className="text-[0.68rem] font-bold font-mono text-white mb-1 uppercase tracking-wide">{u.role}</h3>
-                    <p className="text-[0.75rem] text-gray-400 leading-relaxed">{u.need}</p>
+                    <h3 className="text-[0.8rem] md:text-[0.85rem] font-bold font-mono text-white mb-1.5 uppercase tracking-wide leading-snug">{u.role}</h3>
+                    <p className="text-[0.88rem] md:text-[0.92rem] text-gray-300 leading-relaxed">{u.need}</p>
                   </div>
                 </div>
               ))}
