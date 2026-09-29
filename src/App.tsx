@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 
 const VIEWER_URL = "https://solvx-viewer.vercel.app/";
+const GITHUB_URL = "https://github.com/adityaksx/solvx-viewer";
+const PROTOTYPE_VIDEO_URL = "";
 
 // --- Custom Social Icons ---
 const LinkedinIcon = ({ size = 20, className = "" }) => (
