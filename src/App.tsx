@@ -341,30 +341,56 @@ const Solution: React.FC = () => {
 };
 
 // --- 5. Scientific Impact ---
-const TechImpact: React.FC = () => (
-  <section className="py-24 px-6 border-b border-white/10 bg-transparent">
-    <div className="max-w-[90rem] mx-auto">
-      <SectionHeader tag="Use Cases" title="SCIENTIFIC IMPACT" description="Translating complex multidimensional datasets into inspectable analysis for research, forecasting and operational decision support." />
-      <div className="grid md:grid-cols-2 gap-4">
-        {[
-          { title: "Climate & Ocean Modeling", desc: "Inspect model fields against in-situ observations and identify depth-dependent discrepancies." },
-          { title: "Marine Navigation", desc: "Explore current vectors and observed/modelled conditions within a common spatial view." },
-          { title: "Ecological Monitoring", desc: "Combine temperature, salinity and chlorophyll context with observational coverage." },
-          { title: "Disaster Management", desc: "Surface anomalous regions and model-observation differences to speed situational analysis." },
-          { title: "Search & Rescue", desc: "Use current structure and observational context to understand modelled surface behaviour." },
-          { title: "Fisheries", desc: "Inspect depth-aware temperature, currents and chlorophyll patterns across selected regions." },
-          { title: "Scientific Research", desc: "Work with multidimensional model data and observation profiles in a unified analysis environment." },
-          { title: "Data Quality & Planning", desc: "Expose sparse observational areas and highlight where additional measurements may improve interpretation." }
-        ].map((item, i) => (
-          <div key={i} className="pl-5 border-l-2 border-cyan-400/50 bg-white/[0.05] backdrop-blur-md p-4 rounded-r-sm shadow-sm hover:bg-white/[0.1] transition-colors">
-            <h4 className="text-white text-sm font-medium mb-1.5 drop-shadow-sm">{item.title}</h4>
-            <p className="text-sm text-gray-200">{item.desc}</p>
-          </div>
-        ))}
+const TechImpact: React.FC = () => {
+  const impactAreas = [
+    { icon: <Target size={18} />, title: "Climate & Ocean Modeling", label: "MODEL VALIDATION", desc: "Compare model fields with in-situ observations and inspect where errors change with depth, location and time." },
+    { icon: <Navigation size={18} />, title: "Marine Navigation", label: "CURRENT AWARENESS", desc: "Read current structure alongside observed and modelled conditions in one spatial view." },
+    { icon: <Layers size={18} />, title: "Ecological Monitoring", label: "OCEAN CONTEXT", desc: "Combine temperature, salinity and chlorophyll with observational coverage for regional context." },
+    { icon: <Activity size={18} />, title: "Disaster Management", label: "SITUATIONAL ANALYSIS", desc: "Surface anomalous regions and model-observation differences to accelerate investigation." },
+    { icon: <Globe size={18} />, title: "Search & Rescue", label: "SURFACE CONDITIONS", desc: "Use current patterns and observation context to examine modelled surface behaviour." },
+    { icon: <Thermometer size={18} />, title: "Fisheries", label: "DEPTH-AWARE CONDITIONS", desc: "Inspect temperature, currents and chlorophyll patterns across selected regions and depths." },
+    { icon: <Brain size={18} />, title: "Scientific Research", label: "MULTIDIMENSIONAL ANALYSIS", desc: "Explore model fields, observation profiles, comparisons and analytical results in one workspace." },
+    { icon: <Database size={18} />, title: "Data Quality & Planning", label: "OBSERVATION COVERAGE", desc: "Identify sparse observational areas and see where additional measurements could improve interpretation." }
+  ];
+
+  return (
+    <section className="py-24 px-6 border-b border-white/10 bg-transparent">
+      <div className="max-w-[90rem] mx-auto">
+        <SectionHeader
+          tag="Where It Creates Value"
+          title="SCIENTIFIC IMPACT"
+          description="SolvX connects ocean data to the decisions and investigations that depend on it — from model validation and research to navigation, monitoring and situational analysis."
+        />
+
+        <div className="mb-6 flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-300">
+          <span className="h-px w-8 bg-cyan-400/60"></span>
+          Eight impact areas
+          <span className="h-px flex-1 bg-white/10"></span>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {impactAreas.map((item, i) => (
+            <div
+              key={item.title}
+              className="group min-h-[205px] p-5 border border-white/15 bg-white/[0.045] backdrop-blur-xl rounded-sm shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:bg-white/[0.08] hover:border-cyan-500/40 hover:-translate-y-0.5 transition-all flex flex-col"
+            >
+              <div className="flex items-center justify-between mb-7">
+                <div className="w-9 h-9 border border-cyan-500/30 bg-cyan-950/25 text-cyan-300 flex items-center justify-center rounded-sm group-hover:border-cyan-400/50">
+                  {item.icon}
+                </div>
+                <span className="text-[10px] font-mono text-cyan-500/70 tracking-widest">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+
+              <div className="text-[9px] font-mono font-bold text-cyan-400/80 tracking-[0.16em] mb-2">{item.label}</div>
+              <h4 className="text-white text-[1rem] font-semibold leading-snug mb-3">{item.title}</h4>
+              <p className="text-[0.84rem] text-gray-300 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // --- 6. Team ---
 const AboutTeam: React.FC = () => {
