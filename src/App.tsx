@@ -307,11 +307,58 @@ const Solution: React.FC = () => {
   return (
     <section id="solution" className="py-24 px-6 border-b border-white/10 bg-transparent">
       <div className="max-w-[90rem] mx-auto">
-        <SectionHeader
-          tag="Our Solution"
-          title="SOLVX — FROM OCEAN DATA TO OCEAN INTELLIGENCE"
-          description="SolvX is not just a 3D ocean viewer. It combines volumetric visualization, real observations, model validation, anomaly analysis, observation-coverage intelligence and an AI explanation layer in one browser-based workspace."
-        />
+        <div className="grid lg:grid-cols-[1.65fr_0.8fr] gap-10 lg:gap-14 items-start mb-10">
+          <SectionHeader
+            tag="Our Solution"
+            title="SOLVX — FROM OCEAN DATA TO OCEAN INTELLIGENCE"
+            description="SolvX is not just a 3D ocean viewer. It combines volumetric visualization, real observations, model validation, anomaly analysis, observation-coverage intelligence and an AI explanation layer in one browser-based workspace."
+          />
+
+          <div className="lg:pt-2">
+            <div className="text-[10px] font-mono text-cyan-300 uppercase tracking-[0.2em] mb-4">Prototype &amp; Source</div>
+            <div className="space-y-3">
+              {PROTOTYPE_VIDEO_URL && (
+                <a
+                  href={PROTOTYPE_VIDEO_URL}
+                  onClick={() => track("prototype_video_clicked", { source: "solution" })}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group relative overflow-hidden flex items-center gap-4 p-5 border border-cyan-400/35 bg-cyan-500/[0.10] backdrop-blur-xl rounded-sm shadow-[0_12px_35px_rgba(6,182,212,0.12)] hover:bg-cyan-400/[0.16] hover:border-cyan-300/60 hover:-translate-y-0.5 transition-all"
+                >
+                  <div className="w-12 h-12 flex items-center justify-center border border-cyan-300/40 bg-cyan-950/40 rounded-sm text-cyan-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <div className="text-[10px] font-mono font-bold text-cyan-300 uppercase tracking-widest mb-1">Watch Prototype</div>
+                    <div className="text-base font-semibold text-white">See SolvX in action</div>
+                    <div className="text-xs text-gray-400 mt-1">Open the prototype walkthrough video.</div>
+                  </div>
+                  <ArrowRight size={18} className="text-cyan-300 group-hover:translate-x-1 transition-transform" />
+                </a>
+              )}
+
+              <a
+                href={GITHUB_URL}
+                onClick={() => track("github_repo_clicked", { source: "solution" })}
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-4 p-5 border border-white/15 bg-white/[0.05] backdrop-blur-xl rounded-sm hover:bg-white/[0.09] hover:border-white/30 hover:-translate-y-0.5 transition-all"
+              >
+                <div className="w-12 h-12 flex items-center justify-center border border-white/20 bg-black/20 rounded-sm text-white">
+                  <GithubIcon size={21} />
+                </div>
+                <div className="flex-1">
+                  <div className="text-[10px] font-mono font-bold text-gray-400 uppercase tracking-widest mb-1">Open Source</div>
+                  <div className="text-base font-semibold text-white">View GitHub Repository</div>
+                  <div className="text-xs text-gray-400 mt-1">Explore the SolvX viewer codebase.</div>
+                </div>
+                <ArrowRight size={18} className="text-gray-300 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {capabilities.map((c, i) => <FeatureCard key={i} icon={c.icon} title={c.title} text={c.text} />)}
