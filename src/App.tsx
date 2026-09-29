@@ -80,14 +80,14 @@ const SocialLinks: React.FC<{ person: TeamPerson; large?: boolean }> = ({ person
 );
 
 // --- Shared UI ---
-const SectionHeader: React.FC<{ tag: string; title: string; description?: string }> = ({ tag, title, description }) => (
+const SectionHeader: React.FC<{ tag: string; title: string; description?: string; titleClassName?: string }> = ({ tag, title, description, titleClassName = "" }) => (
   <div className="mb-12 md:mb-16 max-w-4xl">
     <div className="flex items-center gap-3 mb-4">
       <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full shadow-[0_0_8px_#06b6d4]"></div>
       <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">{tag}</span>
     </div>
-    <h2 className="text-2xl md:text-[2.6rem] font-semibold text-white tracking-tight mb-4 drop-shadow-md leading-tight">{title}</h2>
-    {description && <p className="text-gray-300 text-lg leading-relaxed drop-shadow-sm">{description}</p>}
+    <h2 className={`text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4 drop-shadow-md leading-[1.08] ${titleClassName}`}>{title}</h2>
+    {description && <p className="text-gray-300 text-lg md:text-xl leading-relaxed drop-shadow-sm">{description}</p>}
   </div>
 );
 
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => (
           </div>
           <span className="text-white font-mono font-bold tracking-widest text-lg drop-shadow-md">SOLV<span className="text-cyan-500">X</span></span>
         </div>
-        <div className="hidden md:flex items-center gap-6 text-xs font-mono text-gray-300 drop-shadow-md">
+        <div className="hidden md:flex items-center gap-6 text-sm font-mono text-gray-200 drop-shadow-md">
           <a href="#audience" className="hover:text-cyan-400 transition-colors">PROBLEM & USERS</a>
           <a href="#solution" className="hover:text-cyan-400 transition-colors">SOLUTION</a>
           <a href="#architecture" className="hover:text-cyan-400 transition-colors">ARCHITECTURE</a>
@@ -119,11 +119,11 @@ const Navbar: React.FC = () => (
         </div>
       </div>
       <div className="flex items-center gap-6">
-        <div className="hidden md:flex items-center gap-2 text-xs font-mono text-cyan-300 drop-shadow-md">
+        <div className="hidden md:flex items-center gap-2 text-sm font-mono text-cyan-300 drop-shadow-md">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_#4ade80]"></div>
           SYSTEM ONLINE
         </div>
-        <a href={VIEWER_URL} onClick={() => track("launch_viewer_clicked", { source: "navbar" })} target="_blank" rel="noreferrer" className="px-4 py-1.5 bg-white text-black font-mono text-xs font-bold hover:bg-cyan-500 hover:text-white transition-colors flex items-center gap-2 shadow-lg">
+        <a href={VIEWER_URL} onClick={() => track("launch_viewer_clicked", { source: "navbar" })} target="_blank" rel="noreferrer" className="px-4 py-2 bg-white text-black font-mono text-sm font-bold hover:bg-cyan-500 hover:text-white transition-colors flex items-center gap-2 shadow-lg">
           LAUNCH VIEWER <ArrowRight size={14} />
         </a>
       </div>
@@ -418,7 +418,7 @@ const AboutTeam: React.FC = () => {
   return (
     <section id="about" className="py-24 px-6 border-b border-white/10 bg-transparent">
       <div className="max-w-[70rem] mx-auto">
-        <SectionHeader tag="The Team" title="TEAM SOLVX" description="Manipal Institute of Technology Bengaluru" />
+        <SectionHeader tag="The Team" title="TEAM SOLVX" titleClassName="font-extrabold text-4xl md:text-6xl lg:text-7xl" description="Manipal Institute of Technology Bengaluru" />
 
         <div className="flex justify-center mb-16 mt-8">
           <div className="p-8 border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-md rounded-sm flex flex-col shadow-[0_0_30px_rgba(6,182,212,0.15)] max-w-xl w-full relative group">
