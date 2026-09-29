@@ -477,7 +477,7 @@ const SystemArchitecture: React.FC = () => (
       />
 
       <div className="border border-white/20 bg-black/20 backdrop-blur-xl rounded-sm overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.25)]">
-        <div className="px-5 py-3 border-b border-white/15 bg-white/[0.04] flex items-center gap-2 text-[10px] font-mono text-cyan-300 uppercase tracking-widest">
+        <div className="px-5 py-3 border-b border-white/15 bg-white/[0.04] flex items-center gap-2 text-[11px] md:text-xs font-mono text-cyan-300 uppercase tracking-widest">
           <Server size={13} /> End-to-end data flow
         </div>
 
@@ -493,8 +493,8 @@ const SystemArchitecture: React.FC = () => (
               ].map((b, i) => (
                 <div key={i} className="p-4 border border-white/15 bg-white/[0.04] rounded-sm">
                   <div className="text-cyan-300 mb-3">{b.icon}</div>
-                  <div className="text-[10px] font-mono text-cyan-400 tracking-widest mb-2">{b.title}</div>
-                  <div className="text-sm text-gray-200 leading-relaxed">{b.text}</div>
+                  <div className="text-xs font-mono text-cyan-400 tracking-widest mb-2">{b.title}</div>
+                  <div className="text-[0.98rem] md:text-base text-gray-200 leading-relaxed">{b.text}</div>
                 </div>
               ))}
             </div>
@@ -503,20 +503,20 @@ const SystemArchitecture: React.FC = () => (
 
             <div className="grid grid-cols-3 gap-4">
               <div className="p-5 border border-cyan-500/30 bg-cyan-950/20 rounded-sm">
-                <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-widest mb-3"><Server size={16}/> FastAPI Backend</div>
-                <div className="text-sm text-gray-300 leading-relaxed">
+                <div className="flex items-center gap-2 text-cyan-300 font-mono text-sm font-bold uppercase tracking-widest mb-3"><Server size={16}/> FastAPI Backend</div>
+                <div className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">
                   REST API layer for dataset discovery, regional subsetting, point/profile extraction and analysis requests.
                 </div>
               </div>
               <div className="p-5 border border-cyan-500/30 bg-cyan-950/20 rounded-sm">
-                <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-widest mb-3"><Workflow size={16}/> Data & Analysis Services</div>
-                <div className="text-sm text-gray-300 leading-relaxed">
+                <div className="flex items-center gap-2 text-cyan-300 font-mono text-sm font-bold uppercase tracking-widest mb-3"><Workflow size={16}/> Data & Analysis Services</div>
+                <div className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">
                   Python services use xarray/NumPy for NetCDF slicing, depth/time/space selection, collocation, interpolation, RMSE/bias and analytical layers.
                 </div>
               </div>
               <div className="p-5 border border-cyan-500/30 bg-cyan-950/20 rounded-sm">
-                <div className="flex items-center gap-2 text-cyan-300 font-mono text-xs font-bold uppercase tracking-widest mb-3"><Database size={16}/> Data + Cache</div>
-                <div className="text-sm text-gray-300 leading-relaxed">
+                <div className="flex items-center gap-2 text-cyan-300 font-mono text-sm font-bold uppercase tracking-widest mb-3"><Database size={16}/> Data + Cache</div>
+                <div className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">
                   Local model archives and observation data are read server-side; subsetting/caching limits browser payloads and rendering cost.
                 </div>
               </div>
@@ -534,8 +534,8 @@ const SystemArchitecture: React.FC = () => (
                   ["Insights", "anomalies + gaps + explanation context"]
                 ].map(([t, d]) => (
                   <div key={t} className="p-4 bg-black/20 border border-white/10 rounded-sm">
-                    <div className="text-white font-mono text-xs font-bold mb-2">{t}</div>
-                    <div className="text-[11px] text-gray-400 leading-relaxed">{d}</div>
+                    <div className="text-white font-mono text-sm font-bold mb-2">{t}</div>
+                    <div className="text-sm text-gray-400 leading-relaxed">{d}</div>
                   </div>
                 ))}
               </div>
@@ -545,16 +545,16 @@ const SystemArchitecture: React.FC = () => (
 
             <div className="grid grid-cols-3 gap-4">
               <div className="p-5 border border-white/15 bg-white/[0.04] rounded-sm">
-                <div className="flex items-center gap-2 text-white font-mono text-xs font-bold uppercase tracking-widest mb-3"><Globe size={16} className="text-cyan-300"/> React Frontend</div>
-                <p className="text-sm text-gray-300 leading-relaxed">Controls, geographic selection, depth/time/variable navigation and UI state.</p>
+                <div className="flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-widest mb-3"><Globe size={16} className="text-cyan-300"/> React Frontend</div>
+                <p className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">Controls, geographic selection, depth/time/variable navigation and UI state.</p>
               </div>
               <div className="p-5 border border-white/15 bg-white/[0.04] rounded-sm">
-                <div className="flex items-center gap-2 text-white font-mono text-xs font-bold uppercase tracking-widest mb-3"><Layers size={16} className="text-cyan-300"/> Three.js / WebGL</div>
-                <p className="text-sm text-gray-300 leading-relaxed">Transforms returned scientific fields and bathymetry into interactive 3D visualization and overlays.</p>
+                <div className="flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-widest mb-3"><Layers size={16} className="text-cyan-300"/> Three.js / WebGL</div>
+                <p className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">Transforms returned scientific fields and bathymetry into interactive 3D visualization and overlays.</p>
               </div>
               <div className="p-5 border border-white/15 bg-white/[0.04] rounded-sm">
-                <div className="flex items-center gap-2 text-white font-mono text-xs font-bold uppercase tracking-widest mb-3"><Brain size={16} className="text-cyan-300"/> Analysis + AI Layer</div>
-                <p className="text-sm text-gray-300 leading-relaxed">Displays model-vs-observation metrics, anomaly/gap results and uses analysis context to explain selected regions or execute supported commands.</p>
+                <div className="flex items-center gap-2 text-white font-mono text-sm font-bold uppercase tracking-widest mb-3"><Brain size={16} className="text-cyan-300"/> Analysis + AI Layer</div>
+                <p className="text-[0.98rem] md:text-base text-gray-300 leading-relaxed">Displays model-vs-observation metrics, anomaly/gap results and uses analysis context to explain selected regions or execute supported commands.</p>
               </div>
             </div>
 
@@ -563,7 +563,7 @@ const SystemArchitecture: React.FC = () => (
             <div className="grid grid-cols-2 gap-4">
               <div className="p-5 border border-cyan-500/30 bg-cyan-950/20 rounded-sm">
                 <div className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest mb-2">Primary Output</div>
-                <div className="text-white font-mono text-base font-bold">Explore → Compare → Detect → Explain</div>
+                <div className="text-white font-mono text-lg font-bold">Explore → Compare → Detect → Explain</div>
               </div>
               <div className="p-5 border border-white/15 bg-white/[0.04] rounded-sm">
                 <div className="text-[10px] font-mono text-gray-400 uppercase tracking-widest mb-2">Deployment / Delivery</div>
