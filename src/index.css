@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  background-color: #000000;
-  color: #e5e7eb;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+html {
+  font-size: 15px;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
   background-color: #000000;
   color: #e5e7eb;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
 }
