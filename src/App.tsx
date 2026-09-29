@@ -448,7 +448,6 @@ const AboutTeam: React.FC = () => {
     name: "Dr. Tusar Kanti Mishra",
     role: "Project Mentor",
     description: "Guided SolvX’s architecture, scientific approach, and project direction, helping the team translate complex ocean data into a practical and interpretable platform",
-    // photo: "mentor.png",
     github: "",
     email: "tusar.mishra@manipal.edu",
     linkedin: "https://www.linkedin.com/in/dr-tusar-kanti-mishra-0255841b0",
@@ -456,20 +455,61 @@ const AboutTeam: React.FC = () => {
   };
 
   const teamMembers: TeamPerson[] = [
-    { name: "Aditya Kumar Singh", role: "Backend", desc: "Engineered the complete backend architecture, managing NetCDF data pipelines, Xarray processing, and API endpoints for seamless multidimensional data flow",
-    // photo: "aditya.png", github: "https://github.com/adityaksx", email: "Aditya26.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/adityaksx", instagram: "https://www.instagram.com/aditya.ksx" },
-    { name: "Anchal Prakash", role: "Research & UI Developer", desc: "Directed oceanographic research and data validation, while co-developing essential frontend components and integrating UI features",
-    // photo: "anchal.jpeg", github: "", email: "anchal.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/anchal-prakash-80233337a", instagram: "" },
-    { name: "Pratham Shahpura", role: " Team Lead & Presenter", desc: "Team Leader overseeing project strategy, pitching the core vision, and driving the overall presentation of the platform's scientific impact",
-    // photo: "pratham.jpeg", github: "", email: "Pratham.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" },
-    { name: "Swarna Prajapati", role: "Lead Frontend Developer", desc: "Lead Frontend Developer who architected and built the entire React and Tailwind-based glassmorphic user interface and responsive design",
-    // photo: "swarna.jpeg", github: "", email: "swarna2.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/swarna-prajapati-b240a9394", instagram: "" },
-    { name: "Bhavya Aggarwal", role: "3D Visualization Engineer", desc: "Specialized in WebGL and Three.js to engineer the platform's core interactive 3D volumetric rendering and spatial plotting capabilities",
-    // photo: "bhavya.jpeg", github: "", email: "Bhavya3.mitblr2026@learner.manipal.edu", linkedin: "https://www.linkedin.com/in/bhavya-aggarwal-39047743b", instagram: "" },
-    { name: "Yasharth Sharma", role: "Presentation Compiler", desc: "Handled the compilation and basic formatting of the presentation slides for the pitch deck",
-    // photo: "yash.jpeg", github: "", email: "yasharth.mitblr2026@learner.manipal.edu", linkedin: "", instagram: "" }
+    {
+      name: "Aditya Kumar Singh",
+      role: "Backend",
+      desc: "Engineered the complete backend architecture, managing NetCDF data pipelines, Xarray processing, and API endpoints for seamless multidimensional data flow",
+      github: "https://github.com/adityaksx",
+      email: "Aditya26.mitblr2026@learner.manipal.edu",
+      linkedin: "https://www.linkedin.com/in/adityaksx",
+      instagram: "https://www.instagram.com/aditya.ksx"
+    },
+    {
+      name: "Anchal Prakash",
+      role: "Research & UI Developer",
+      desc: "Directed oceanographic research and data validation, while co-developing essential frontend components and integrating UI features",
+      github: "",
+      email: "anchal.mitblr2026@learner.manipal.edu",
+      linkedin: "https://www.linkedin.com/in/anchal-prakash-80233337a",
+      instagram: ""
+    },
+    {
+      name: "Pratham Shahpura",
+      role: "Team Lead & Presenter",
+      desc: "Team Leader overseeing project strategy, pitching the core vision, and driving the overall presentation of the platform's scientific impact",
+      github: "",
+      email: "Pratham.mitblr2026@learner.manipal.edu",
+      linkedin: "",
+      instagram: ""
+    },
+    {
+      name: "Swarna Prajapati",
+      role: "Lead Frontend Developer",
+      desc: "Lead Frontend Developer who architected and built the entire React and Tailwind-based glassmorphic user interface and responsive design",
+      github: "",
+      email: "swarna2.mitblr2026@learner.manipal.edu",
+      linkedin: "https://www.linkedin.com/in/swarna-prajapati-b240a9394",
+      instagram: ""
+    },
+    {
+      name: "Bhavya Aggarwal",
+      role: "3D Visualization Engineer",
+      desc: "Specialized in WebGL and Three.js to engineer the platform's core interactive 3D volumetric rendering and spatial plotting capabilities",
+      github: "",
+      email: "Bhavya3.mitblr2026@learner.manipal.edu",
+      linkedin: "https://www.linkedin.com/in/bhavya-aggarwal-39047743b",
+      instagram: ""
+    },
+    {
+      name: "Yasharth Sharma",
+      role: "Presentation Compiler",
+      desc: "Handled the compilation and basic formatting of the presentation slides for the pitch deck",
+      github: "",
+      email: "yasharth.mitblr2026@learner.manipal.edu",
+      linkedin: "",
+      instagram: ""
+    }
   ];
-
 
   return (
     <section id="about" className="py-24 px-6 border-b border-white/10 bg-transparent">
@@ -479,15 +519,7 @@ const AboutTeam: React.FC = () => {
         <div className="flex justify-center mb-16 mt-8">
           <div className="p-8 border border-cyan-500/30 bg-cyan-950/20 backdrop-blur-md rounded-sm flex flex-col shadow-[0_0_30px_rgba(6,182,212,0.15)] max-w-xl w-full relative group">
             <div className="flex items-center gap-6">
-              {/* Photo temporarily disabled. Restore this block when team photos are ready.
-              <div className="w-24 h-24 bg-cyan-900/50 border border-cyan-400/50 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden shadow-[0_0_20px_rgba(6,182,212,0.2)] group-hover:scale-105 transition-transform">
-                {hasValue(mentor.photo) ? (
-                  <img src={mentor.photo} alt={mentor.name} className="w-full h-full object-cover" />
-                ) : (
-                  <User size={34} className="text-cyan-300" />
-                )}
-              </div>
-              */}
+              {/* Team photo temporarily disabled. Restore photo rendering here when image assets are ready. */}
               <div className="w-16 h-16 bg-cyan-950/50 border border-cyan-400/30 rounded-full flex items-center justify-center flex-shrink-0">
                 <User size={28} className="text-cyan-300" />
               </div>
@@ -505,7 +537,7 @@ const AboutTeam: React.FC = () => {
           {teamMembers.map((member, i) => (
             <div key={i} className="p-6 md:p-8 border border-white/20 bg-white/[0.05] backdrop-blur-md rounded-sm hover:bg-white/[0.1] hover:border-cyan-500/50 transition-all group flex flex-col shadow-md">
               <div className="flex items-center gap-5 mb-5">
-                {/* Photo temporarily disabled. Restore the photo block here when team photos are ready. */}
+                {/* Team photo temporarily disabled. Restore photo rendering here when image assets are ready. */}
                 <div className="w-14 h-14 bg-cyan-950/40 border border-cyan-500/25 rounded-full flex items-center justify-center flex-shrink-0">
                   <User size={24} className="text-cyan-400 opacity-80" />
                 </div>
